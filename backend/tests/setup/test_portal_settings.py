@@ -6,15 +6,6 @@ from plone import api
 class TestPortalSettings:
     """Test that Portal configuration is correctly done."""
 
-    @pytest.mark.parametrize(
-        "key,expected",
-        [
-            ["plone.site_title", "Intranet do TRE-PI"],
-            ["plone.email_from_name", "Intranet do TRE-PI"],
-            ["plone.smtp_host", "localhost"],
-            ["plone.smtp_port", 25],
-        ],
-    )
     def test_portal_social_media(self, portal):
         """Test portal Email."""
         value = api.portal.get_registry_record("plone.twitter_username")
