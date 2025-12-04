@@ -1,12 +1,16 @@
 import React from 'react';
-import AreaInfo from '../../AreaInfo/AreaInfo';
+import AreaInfo from 'volto-trepi-intranet/components/AreaInfo/AreaInfo';
+import type { RelatedItem } from '@plone/types';
 
-const AreaGridItem = ({ item }) => {
+interface AreaGridItemProps {
+  item: RelatedItem;
+}
+
+const AreaGridItem: React.FC<AreaGridItemProps> = (props) => {
+  const { item } = props;
   return (
-    <div className={`card-inner`}>
-      <div className={`card-summary`}>
-        <AreaInfo content={item} icon />
-      </div>
+    <div className={`card-summary`}>
+      <AreaInfo content={item} icon />
     </div>
   );
 };
